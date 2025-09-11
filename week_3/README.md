@@ -1,3 +1,7 @@
+NAMA : Soultan Mohammad Agnar Bisyarah
+NIM : 2341720191
+Kelas : TI-3H
+
 # Praktikum 1
 Langkah 1
 
