@@ -59,7 +59,7 @@ void main() {
   print(data);
 }
 ```
-![Foto Profil](img/foto2.png4)
+![Foto Profil](img/foto2.png)
 pada variabel data, bisa tidak di isi variabel nya terlebih dahulu, namun bisa harus tetap di isi, bisa digunakan untuk variabel yang berdasarkan inputan.
 
 
