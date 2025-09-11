@@ -1,11 +1,12 @@
 void main() {
-  String nama = "Soultan Mohammad Agnar Bisyarah";
-  String nim = "2341720191";         
+  String nama = "Soultan Mohammad Agnar Bisyarah"; 
+  String nim = "2341720191";          
 
-  print("Bilangan prima dari 0 sampai 201:");
   for (int i = 0; i <= 201; i++) {
     if (isPrima(i)) {
       print("$i → $nama ($nim)");
+    } else {
+      print("$i");
     }
   }
 }

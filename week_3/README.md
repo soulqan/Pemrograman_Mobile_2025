@@ -120,15 +120,17 @@ void main(){
 ![Foto Profil](img/Praktikum3/langkah%203.3.png)
 
 # Tugas
+Buatlah sebuah program yang dapat menampilkan bilangan prima dari angka 0 sampai 201 menggunakan Dart. Ketika bilangan prima ditemukan, maka tampilkan nama lengkap dan NIM Anda.
 ```
 void main() {
-  String nama = "Soultan Mohammad Agnar Bisyarah";
-  String nim = "2341720191";         
+  String nama = "Soultan Mohammad Agnar Bisyarah"; 
+  String nim = "2341720191";          
 
-  print("Bilangan prima dari 0 sampai 201:");
   for (int i = 0; i <= 201; i++) {
     if (isPrima(i)) {
       print("$i → $nama ($nim)");
+    } else {
+      print("$i");
     }
   }
 }
@@ -141,4 +143,7 @@ bool isPrima(int n) {
   return true;
 }
 ```
-![Foto Profil](img/Tugas/tugas%202.png)
+![Foto Profil](img/Tugas/tugas1.png)
+![Foto Profil](img/Tugas/tugas2.png)
+![Foto Profil](img/Tugas/tugas3.png)
+![Foto Profil](img/Tugas/tugas4.png)
