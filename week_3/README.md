@@ -53,7 +53,7 @@ void main(){
 } 
 }
 ```
-![Foto Profil](img/Praktikum2/langkah%201.png)
+![Foto Profil](img/Praktikum2/langkah%202.1.png)
 
 Langkah 2
 Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
@@ -70,7 +70,7 @@ do {
 
 }
 ```
-![Foto Profil](img/Praktikum2/langkah%203.png)
+![Foto Profil](img/Praktikum2/langkah%202.3.png)
 yang terjadi adalah perulangan akan selalu dilakukan selama counter itu mempunyai nilai dibawah 77 dan nilai counter akan terus bertambah karena counter++
 
 # Praktikum 3
@@ -82,7 +82,7 @@ void main(){
 }
 }
 ```
-![Foto Profil](img/Praktikum3/langkah%201.png)
+![Foto Profil](img/Praktikum3/langkah%203.1.png)
 
 Langkah 2
 Eror dikarenakan variabel index belum ada tipe data nya dan infinite loop dikarenakn tidak ada index++
@@ -117,7 +117,7 @@ void main(){
 }
 }
 ```
-![Foto Profil](img/Praktikum3/langkah%203.png)
+![Foto Profil](img/Praktikum3/langkah%203.3.png)
 
 # Tugas
 ```
