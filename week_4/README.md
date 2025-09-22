@@ -171,7 +171,8 @@ nobleGases[18] = 'argon';
 
 
 Tambahkan elemen nama dan NIM Anda pada tiap variabel di atas (gifts, nobleGases, mhs1, dan mhs2).
-'''
+
+```
 void main() {
   // Map awal
   var gifts = {
@@ -216,5 +217,5 @@ void main() {
   print(mhs1);
   print(mhs2);
 }
-'''
+```
 ![Foto Profil](img/photo6.png)
