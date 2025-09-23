@@ -322,3 +322,96 @@ Langkah 6
 ```
 ![Foto Profil](img/photo10.png)
 Manfaat Collection for untuk mempermudah pembuatan list dari koleksi lain tanpa perlu loop terpisah. 
+
+# Praktikum 5
+
+Langkah 1
+```
+void main() {
+  var record = ('first', a: 2, b: true, 'last');
+print(record);
+
+}
+```
+![Foto Profil](img/photo12.png)
+
+Langkah 2
+
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+Jawaban: Eror dikarenakan kurang titik koma setelah print record
+
+Langkah 3
+```
+void main() {
+  var record = ('first', a: 2, b: true, 'last');
+  print(record);
+}
+
+(int, int) tukar((int, int) record) {
+  var (a, b) = record;
+  return (b, a);
+}
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Gunakan fungsi tukar() di dalam main() sehingga tampak jelas proses pertukaran value field di dalam Records.
+
+Jawaban: Tidak terjadi eror, hanya saja fungsi tukar tidak terpakai, sehingga proses pertukaran nilai record tidak terlihat
+
+Perbaikan
+```
+void main() {
+  
+  var record = ('first', a: 2, b: true, 'last');
+  print('Record campuran: $record');
+
+  var angka = (10, 20);
+  print('Sebelum tukar: $angka');
+
+  var hasil = tukar(angka);
+  print('Sesudah tukar: $hasil');
+}
+
+(int, int) tukar((int, int) record) {
+  var (a, b) = record;
+  return (b, a);
+}
+```
+![Foto Profil](img/photo13.png)
+
+
+Langkah 4
+```
+  (String, int) mahasiswa=('Soultan Mohammad Agnar Bisyarah', 234170191);
+print(mahasiswa);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Inisialisasi field nama dan NIM Anda pada variabel record mahasiswa di atas. Dokumentasikan hasilnya dan buat laporannya!
+
+Jawaban: Awalnya terjadi eror karena mahasiswa belum memiliki value.
+
+![Foto Profil](img/photo14.png)
+
+Langkah 5
+```
+var mahasiswa2 = ('first', a: 2, b: true, 'last');
+
+print(mahasiswa2.$1); // Prints 'first'
+print(mahasiswa2.a); // Prints 2
+print(mahasiswa2.b); // Prints true
+print(mahasiswa2.$2); // Prints 'last'
+```
+
+![Foto Profil](img/photo15.png)
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Gantilah salah satu isi record dengan nama dan NIM Anda, lalu dokumentasikan hasilnya dan buat laporannya!
+Jawaban: Tidak ada eror
+
+```
+  var mahasiswa2 = ('Soultan Mohammad Agnar Bisyarah', a: 2341720191, b: true, 'Mahasiswa');
+
+  print(mahasiswa2.$1); 
+  print(mahasiswa2.a);  
+  print(mahasiswa2.b); 
+  print(mahasiswa2.$2); 
+```
+![Foto Profil](img/photo16.png)
