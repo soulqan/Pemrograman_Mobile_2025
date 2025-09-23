@@ -415,3 +415,133 @@ Jawaban: Tidak ada eror
   print(mahasiswa2.$2); 
 ```
 ![Foto Profil](img/photo16.png)
+
+
+# Tugas
+1. sudah
+
+2. Functions adalah blok kode yang dapat dipanggil berulang kali untuk menjalankan tugas tertentu.
+
+3. 
+a) Required Parameter 
+Harus diisi sesuai urutan.
+```
+int kali(int a, int b) {
+  return a * b;
+}
+
+void main() {
+  print(kali(2, 3)); // 6
+}
+```
+b) Optional Positional Parameters (pakai []) 
+Boleh tidak diisi, jika tidak maka nilainya null (atau default)
+```
+void halo(String nama, [String? sapaan]) {
+  print("Halo $nama ${sapaan ?? ''}");
+}
+
+void main() {
+  halo("Budi");             
+  halo("Budi", "Selamat");  
+}
+
+```
+c) Named Parameters (pakai {}) 
+Panggilan dengan menyebut nama parameternya
+```
+void identitas({required String nama, int? umur}) {
+  print("Nama: $nama, Umur: ${umur ?? '-'}");
+}
+
+void main() {
+  identitas(nama: "Ani", umur: 20);
+  identitas(nama: "Budi");
+}
+```
+d) Default Parameters
+Parameter diberi nilai default jika tidak diisi.
+```
+void sapa(String nama, {String sapaan = "Halo"}) {
+  print("$sapaan $nama");
+}
+
+void main() {
+  sapa("Dian");    
+  sapa("Dian", sapaan: "Hai"); 
+}
+
+```
+
+4. fungsi diperlakukan seperti objek: bisa disimpan dalam variabel, dikirim sebagai parameter, atau dikembalikan dari fungsi lain.
+```
+int tambah(int a, int b) => a + b;
+
+void operasi(int x, int y, Function f) {
+  print("Hasil: ${f(x, y)}");
+}
+
+void main() {
+  var myFunction = tambah;
+  print(myFunction(3, 4)); // 7
+
+  operasi(5, 2, tambah);   // Hasil: 7
+}
+
+```
+
+5. Anonymous function adalah fungsi tanpa nama dan biasa dipakai sebagai argumen fungsi lain (callback).
+
+```
+void main() {
+  var angka = [1, 2, 3];
+  
+  angka.forEach((item) {
+    print(item * 2);
+  });
+
+  var kaliDua = (int x) => x * 2;
+  print(kaliDua(5)); // 10
+}
+
+```
+
+6. a) Lexical Scope
+
+Variabel hanya bisa diakses dalam ruang lingkup (scope) di mana dia dideklarasikan
+```
+void main() {
+  var luar = "variabel luar";
+
+  void dalam() {
+    var dalam = "variabel dalam";
+    print(luar);   
+    print(dalam);
+  }
+
+  dalam();
+
+}
+
+```
+b) Lexical Closures
+
+Closure adalah fungsi yang mengikat variabel di luar scope-nya agar tetap bisa diakses walaupun scope asalnya sudah selesai
+
+```
+Function buatCounter() {
+  int hitung = 0;
+  return () {
+    hitung++;
+    return hitung;
+  };
+}
+
+void main() {
+  var counter = buatCounter();
+  print(counter());
+  print(counter()); 
+  print(counter());
+}
+
+```
