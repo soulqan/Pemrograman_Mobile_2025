@@ -219,3 +219,106 @@ void main() {
 }
 ```
 ![Foto Profil](img/photo6.png)
+
+# Praktikum 4
+
+Langkah 1 
+
+```
+void main() {
+  var list = [1, 2, 3];
+var list2 = [0, ...list];
+print(list1);
+print(list2);
+print(list2.length);
+
+}
+```
+
+Langkah 2 
+
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+Jawaban: Eror karena list1 belum di definisikan
+
+Langkah 3
+```
+void main() {
+  var list = [1, 2, 3];
+var list2 = [0, ...list];
+print(list1);
+print(list2);
+print(list2.length);
+
+list1 = [1, 2, null];
+print(list1);
+var list3 = [0, ...?list1];
+print(list3.length);
+}
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+
+Jawaban: Eror karena list1 belum diberi tipe data nya
+
+Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya!
+
+```
+void main() {
+  var list = [1, 2, 3];
+  var list1 = [1, 2, null];
+  var list2 = [0, ...list];
+  print(list1);
+  print(list2);
+  print(list2.length);
+
+  print(list1);
+  var list3 = [0, ...?list1];
+  print(list3.length);
+
+  var nim = ['2', '3', '4', '1', '7', '2', '0', '1', '9', '1'];
+  var listNIM = [...nim];
+  print(listNIM);
+  print(listNIM.length);
+}
+
+```
+
+![Foto Profil](img/photo7.png)
+
+
+Langkah 4
+```
+  var promoActive = true;
+  var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+print(nav);
+
+```
+Jika true maka outlet akan di tampilkan jika false maka outlet akan di sembunyikan
+
+True
+![Foto Profil](img/photo8.png)
+
+False
+![Foto Profil](img/photo11.png)
+
+Langkah 5
+```
+var login = 'Manager'; 
+  var nav2 = ['Home', 'Furniture', 'Plants', if (login == 'Manager') 'Inventory'];
+  print(nav2);
+
+```
+Jika login= manager maka inventory akan di tampilkan, jika selain manager maka akan di sembunyikan
+![Foto Profil](img/photo9.png)
+
+Langkah 6
+```
+ var listOfInts = [1, 2, 3];
+  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  assert(listOfStrings[1] == '#1');
+  print(listOfStrings);
+
+```
+![Foto Profil](img/photo10.png)
+Manfaat Collection for untuk mempermudah pembuatan list dari koleksi lain tanpa perlu loop terpisah. 
