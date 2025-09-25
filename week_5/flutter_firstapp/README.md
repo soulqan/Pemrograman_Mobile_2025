@@ -1,16 +1,14 @@
-# flutter_firstapp
+# Dokumentasi flutter app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![ Screenshot Hello_world](images/01.png)
+![ Screenshot Hello_world](images/02.png)
+![ Screenshot Hello_world](images/03.png)
+![ Screenshot Hello_world](images/04.png)
+![ Screenshot Hello_world](images/05.png)
+![ Screenshot Hello_world](images/06.png)
+![ Screenshot Hello_world](images/07.png)
+![ Screenshot Hello_world](images/08.png)
+![ Screenshot Hello_world](images/09.png)
+![ Screenshot Hello_world](images/10.png)
+![ Screenshot Hello_world](images/11.png)
+![ Screenshot Hello_world](images/12.png)
