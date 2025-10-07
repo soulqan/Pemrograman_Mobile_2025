@@ -1,3 +1,8 @@
+# week_6
+
+
+# Tugas Praktikum 1 (praktikum 1-4)
+```
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -102,3 +107,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+```
+
+hasil
+![ Screenshot Hello_world](images/01.png)

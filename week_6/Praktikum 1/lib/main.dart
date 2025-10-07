@@ -1,8 +1,3 @@
-# week_6
-
-
-# Tugas Praktikum 1
-```
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -58,7 +53,7 @@ class MyApp extends StatelessWidget {
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
-        'Tabela Sanggam merupkana kebun kota yang berada di Palangkaraya, Kalimantan Tengah. Tabela Sanggam ini merupakan salah satu destinasi wisata yang menarik untuk dikunjungi. Di sini, pengunjung dapat menikmati keindahan alam, dan udara segar. Kebun ini juga sering digunakan sebagai tempat edukasi bagi anak-anak sekolah untuk belajar tentang berbagai jenis tanaman dan ekosistem. Dengan suasana yang asri dan pemandangan yang indah, Tabela Sanggam menjadi tempat yang sempurna untuk bersantai dan menghabiskan waktu bersama keluarga atau teman-teman.',
+        'Tabela Sanggam merupkana kebun kota yang berada di Palangkaraya, Kalimantan Tengah. Tabela Sanggam ini merupakan salah satu destinasi wisata yang menarik untuk dikunjungi. Di sini, pengunjung dapat menikmati keindahan alam, dan udara segar. Kebun ini juga sering digunakan sebagai tempat edukasi bagi anak-anak sekolah untuk belajar tentang berbagai jenis tanaman dan ekosistem. Dengan suasana yang asri dan pemandangan yang indah, Tabela Sanggam menjadi tempat yang sempurna untuk bersantai dan menghabiskan waktu bersama keluarga atau teman-teman. (Soultan Mohammad Agnar Bisyarah - 2341720191)',
         softWrap: true,
       ),
     );
@@ -107,8 +102,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-```
-
-hasil
-![ Screenshot Hello_world](images/01.png)
