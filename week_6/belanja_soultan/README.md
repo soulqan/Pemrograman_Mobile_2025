@@ -543,7 +543,7 @@ class ItemCard extends StatelessWidget {
 ```
 
 # Menu Utama
-![ Screenshot Hello_world](images/01.png)
+![ Screenshot Hello_world](img/01.png)
 
 # Card Item
-![ Screenshot Hello_world](images/01.png)
+![ Screenshot Hello_world](img/02.png)

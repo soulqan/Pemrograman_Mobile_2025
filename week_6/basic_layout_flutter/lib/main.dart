@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       decoration: const BoxDecoration(color: Colors.black26),
       child: Column(
         children: [
-          _buildImageRow('img/KolamBB.png', 'img/lake.png'),
+          _buildImageRow('img/hotel.png', 'img/jungle.png'),
           _buildImageRow('img/mountain.png', 'img/pavlova.png'),
         ],
       ),
