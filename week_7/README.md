@@ -106,7 +106,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // 🟨 Container dengan RedTextWidget
             Container(
               color: Colors.yellowAccent,
               width: 50,
