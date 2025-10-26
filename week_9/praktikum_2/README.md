@@ -1,1 +1,1 @@
-![gif](assets/gif.mov)
+![gif](assets/gif.gif)
