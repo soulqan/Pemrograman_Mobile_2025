@@ -2,4 +2,4 @@
 
 Demo hasil filter warna di Flutter 🎨
 
-<img src="assets/gif.gif" alt="Demo Photo Filter" width="250">
+<img src="assets/gif.gif" alt="Demo Photo Filter" width="400">
