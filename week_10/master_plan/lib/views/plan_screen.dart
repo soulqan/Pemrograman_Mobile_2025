@@ -10,7 +10,7 @@ class PlanScreen extends StatefulWidget {
 
 class _PlanScreenState extends State<PlanScreen> {
   Plan plan = const Plan();
-  // late ScrollController scrollController;
+  late ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -37,26 +37,26 @@ class _PlanScreenState extends State<PlanScreen> {
   );
 }
 
-Widget _buildList() {
-  return ListView.builder(
-   itemCount: plan.tasks.length,
-   itemBuilder: (context, index) =>
-   _buildTaskTile(plan.tasks[index], index),
-  );
-}
-
 // Widget _buildList() {
 //   return ListView.builder(
-//    controller: scrollController, // Tambahkan ini
-//    keyboardDismissBehavior: Theme.of(context).platform == // Tambahkan ini
-//          TargetPlatform.iOS
-//           ? ScrollViewKeyboardDismissBehavior.onDrag
-//           : ScrollViewKeyboardDismissBehavior.manual, // Tambahkan ini
 //    itemCount: plan.tasks.length,
 //    itemBuilder: (context, index) =>
 //    _buildTaskTile(plan.tasks[index], index),
 //   );
 // }
+
+Widget _buildList() {
+  return ListView.builder(
+   controller: scrollController, // Tambahkan ini
+   keyboardDismissBehavior: Theme.of(context).platform == // Tambahkan ini
+         TargetPlatform.iOS
+          ? ScrollViewKeyboardDismissBehavior.onDrag
+          : ScrollViewKeyboardDismissBehavior.manual, // Tambahkan ini
+   itemCount: plan.tasks.length,
+   itemBuilder: (context, index) =>
+   _buildTaskTile(plan.tasks[index], index),
+  );
+}
 
 Widget _buildTaskTile(Task task, int index) {
     return ListTile(
@@ -92,18 +92,18 @@ Widget _buildTaskTile(Task task, int index) {
     );
   }
   
-//   @override
-  // void initState() {
-  //   super.initState();
-  //   scrollController = ScrollController()
-  //     ..addListener(() {
-  //       FocusScope.of(context).requestFocus(FocusNode());
-  //     });
-  // }
+  @override
+  void initState() {
+    super.initState();
+    scrollController = ScrollController()
+      ..addListener(() {
+        FocusScope.of(context).requestFocus(FocusNode());
+      });
+  }
   
-// @override
-// void dispose() {
-//   scrollController.dispose();
-//   super.dispose();
-// }
+@override
+void dispose() {
+  scrollController.dispose();
+  super.dispose();
+}
 }
