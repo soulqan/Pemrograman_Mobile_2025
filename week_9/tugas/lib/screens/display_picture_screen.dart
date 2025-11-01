@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import '../widget/filter_selector.dart';
-import '../widget/filter_item.dart';
-import '../widget/carousel_flowdelegate.dart';
 
 class DisplayPictureScreen extends StatefulWidget {
   final String imagePath;

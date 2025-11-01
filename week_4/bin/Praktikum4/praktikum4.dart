@@ -7,7 +7,7 @@ void main() {
   print(list2.length);
 
   print(list1);
-  var list3 = [0, ...?list1];
+  var list3 = [0, ...list1];
   print(list3.length);
 
   var nim = ['2', '3', '4', '1', '7', '2', '0', '1', '9', '1'];

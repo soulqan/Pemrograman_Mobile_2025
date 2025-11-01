@@ -11,8 +11,8 @@ class FabWidget extends StatelessWidget {
           onPressed: () {
            
           },
-          child: const Icon(Icons.thumb_up),
           backgroundColor: Colors.pink,
+          child: const Icon(Icons.thumb_up),
         ),
       ),
     );

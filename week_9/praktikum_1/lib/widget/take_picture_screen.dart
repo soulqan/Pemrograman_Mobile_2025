@@ -1,11 +1,10 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'display_picture_screen.dart';
 
 class TakePictureScreen extends StatefulWidget {
   final CameraDescription camera;
-  const TakePictureScreen({Key? key, required this.camera}) : super(key: key);
+  const TakePictureScreen({super.key, required this.camera});
 
   @override
   _TakePictureScreenState createState() => _TakePictureScreenState();
