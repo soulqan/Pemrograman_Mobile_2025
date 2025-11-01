@@ -1,5 +1,6 @@
 import '../models/data_layer.dart';
 import 'package:flutter/material.dart';
+import '../provider/plan_provider.dart';
 
 class PlanScreen extends StatefulWidget {
   const PlanScreen({super.key});
@@ -9,31 +10,68 @@ class PlanScreen extends StatefulWidget {
 }
 
 class _PlanScreenState extends State<PlanScreen> {
-  Plan plan = const Plan();
+  // Plan plan = const Plan();
   late ScrollController scrollController;
 
-  @override
-  Widget build(BuildContext context) {
-   return Scaffold(
-    // ganti ‘Namaku' dengan Nama panggilan Anda
-    appBar: AppBar(title: const Text('Master Plan Namaku')),
-    body: _buildList(),
-    floatingActionButton: _buildAddTaskButton(),
-   );
-  }
+  // @override
+  // Widget build(BuildContext context) {
+  //  return Scaffold(
+  //   // ganti ‘Namaku' dengan Nama panggilan Anda
+  //   appBar: AppBar(title: const Text('Master Plan Namaku')),
+  //   body: _buildList(),
+  //   floatingActionButton: _buildAddTaskButton(),
+  //  );
+  // }
 
-  Widget _buildAddTaskButton() {
+@override
+Widget build(BuildContext context) {
+  // Ambil planNotifier di sini
+  ValueNotifier<Plan> planNotifier = PlanProvider.of(context);
+
+  return Scaffold(
+    appBar: AppBar(title: const Text('Master Plan Namaku')),
+    // Gunakan ValueListenableBuilder untuk "mendengarkan" perubahan
+    body: ValueListenableBuilder<Plan>(
+      valueListenable: planNotifier,
+      builder: (context, plan, child) {
+        return Column(
+          children: [
+            Expanded(child: _buildList(plan)), // Kirim 'plan' ke _buildList
+            SafeArea(child: Text(plan.completenessMessage)), // Tampilkan pesan
+          ],
+        );
+      },
+    ),
+    floatingActionButton: _buildAddTaskButton(context),
+  );
+}
+
+//   Widget _buildAddTaskButton() {
+//   return FloatingActionButton(
+//    child: const Icon(Icons.add),
+//    onPressed: () {
+//      setState(() {
+//       plan = Plan(
+//        name: plan.name,
+//        tasks: List<Task>.from(plan.tasks)
+//        ..add(const Task()),
+//      );
+//     });
+//    },
+//   );
+// }
+
+Widget _buildAddTaskButton(BuildContext context) { // Tambahkan BuildContext
+  ValueNotifier<Plan> planNotifier = PlanProvider.of(context); // Tambahkan ini
   return FloatingActionButton(
-   child: const Icon(Icons.add),
-   onPressed: () {
-     setState(() {
-      plan = Plan(
-       name: plan.name,
-       tasks: List<Task>.from(plan.tasks)
-       ..add(const Task()),
-     );
-    });
-   },
+    child: const Icon(Icons.add),
+    onPressed: () {
+      Plan currentPlan = planNotifier.value; // Ubah ini
+      planNotifier.value = Plan( // Ubah ini
+        name: currentPlan.name,
+        tasks: List<Task>.from(currentPlan.tasks)..add(const Task()),
+      );
+    },
   );
 }
 
@@ -45,52 +83,98 @@ class _PlanScreenState extends State<PlanScreen> {
 //   );
 // }
 
-Widget _buildList() {
+// Widget _buildList() {
+//   return ListView.builder(
+//    controller: scrollController, // Tambahkan ini
+//    keyboardDismissBehavior: Theme.of(context).platform == // Tambahkan ini
+//          TargetPlatform.iOS
+//           ? ScrollViewKeyboardDismissBehavior.onDrag
+//           : ScrollViewKeyboardDismissBehavior.manual, // Tambahkan ini
+//    itemCount: plan.tasks.length,
+//    itemBuilder: (context, index) =>
+//    _buildTaskTile(plan.tasks[index], index),
+//   );
+// }
+
+Widget _buildList(Plan plan) { // Terima 'plan' dari parameter
   return ListView.builder(
-   controller: scrollController, // Tambahkan ini
-   keyboardDismissBehavior: Theme.of(context).platform == // Tambahkan ini
-         TargetPlatform.iOS
-          ? ScrollViewKeyboardDismissBehavior.onDrag
-          : ScrollViewKeyboardDismissBehavior.manual, // Tambahkan ini
-   itemCount: plan.tasks.length,
-   itemBuilder: (context, index) =>
-   _buildTaskTile(plan.tasks[index], index),
+    controller: scrollController,
+    keyboardDismissBehavior: Theme.of(context).platform ==
+            TargetPlatform.iOS
+        ? ScrollViewKeyboardDismissBehavior.onDrag
+        : ScrollViewKeyboardDismissBehavior.manual,
+    itemCount: plan.tasks.length,
+    itemBuilder: (context, index) =>
+        _buildTaskTile(plan.tasks[index], index, context), // Tambahkan 'context'
   );
 }
 
-Widget _buildTaskTile(Task task, int index) {
-    return ListTile(
-      leading: Checkbox(
-          value: task.complete,
-          onChanged: (selected) {
-            setState(() {
-              plan = Plan(
-                name: plan.name,
-                tasks: List<Task>.from(plan.tasks)
-                  ..[index] = Task(
-                    description: task.description,
-                    complete: selected ?? false,
-                  ),
-              );
-            });
-          }),
-      title: TextFormField(
-        initialValue: task.description,
-        onChanged: (text) {
-          setState(() {
-            plan = Plan(
-              name: plan.name,
-              tasks: List<Task>.from(plan.tasks)
-                ..[index] = Task(
-                  description: text,
-                  complete: task.complete,
-                ),
-            );
-          });
-        },
-      ),
-    );
-  }
+// Widget _buildTaskTile(Task task, int index) {
+//     return ListTile(
+//       leading: Checkbox(
+//           value: task.complete,
+//           onChanged: (selected) {
+//             setState(() {
+//               plan = Plan(
+//                 name: plan.name,
+//                 tasks: List<Task>.from(plan.tasks)
+//                   ..[index] = Task(
+//                     description: task.description,
+//                     complete: selected ?? false,
+//                   ),
+//               );
+//             });
+//           }),
+//       title: TextFormField(
+//         initialValue: task.description,
+//         onChanged: (text) {
+//           setState(() {
+//             plan = Plan(
+//               name: plan.name,
+//               tasks: List<Task>.from(plan.tasks)
+//                 ..[index] = Task(
+//                   description: text,
+//                   complete: task.complete,
+//                 ),
+//             );
+//           });
+//         },
+//       ),
+//     );
+//   }
+
+Widget _buildTaskTile(Task task, int index, BuildContext context) { // Tambahkan BuildContext
+  ValueNotifier<Plan> planNotifier = PlanProvider.of(context); // Tambahkan ini
+  return ListTile(
+    leading: Checkbox(
+        value: task.complete,
+        onChanged: (selected) {
+          Plan currentPlan = planNotifier.value; // Ubah ini
+          planNotifier.value = Plan( // Ubah ini
+            name: currentPlan.name,
+            tasks: List<Task>.from(currentPlan.tasks)
+              ..[index] = Task(
+                description: task.description,
+                complete: selected ?? false,
+              ),
+          );
+        }),
+    title: TextFormField(
+      initialValue: task.description,
+      onChanged: (text) {
+        Plan currentPlan = planNotifier.value; // Ubah ini
+        planNotifier.value = Plan( // Ubah ini
+          name: currentPlan.name,
+          tasks: List<Task>.from(currentPlan.tasks)
+            ..[index] = Task(
+              description: text,
+              complete: task.complete,
+            ),
+        );
+      },
+    ),
+  );
+}
   
   @override
   void initState() {

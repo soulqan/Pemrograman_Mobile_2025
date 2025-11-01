@@ -1,3 +1,5 @@
+# Praktikum 1
+
 1. ![alt text](image/1.gif)
 Jdi hasil akhir dari praktikum1 itu ada pada ux nya yang mana apabila keyboard virtual keluar, lalu kita melakukan scroll maka keyboard akan menutup sendiri
 
@@ -20,3 +22,14 @@ Masalah: Jika di scroll daftar ke atas atau ke bawah (misalnya untuk melihat tug
 initState(): Dipanggil saat State pertama kali dibuat — digunakan untuk inisialisasi awal (misalnya controller).
 
 dispose(): Dipanggil saat State dihapus — digunakan untuk membersihkan resource agar tidak terjadi memory leak.
+
+# Praktikum 2
+
+2. PlanProvider adalah InheritedWidget-nya. Kita menggunakan InheritedNotifier karena dirancang khusus untuk membawa Listenable . ini memungkinkan widget turunan "mendengarkan" perubahan data secara efisien menggunakan ValueListenableBuilder, tanpa perlu merebuild seluruh layar.
+
+3. itu adalah getter (metode) yang diletakkan di dalam class Model (Plan). bertujuan untuk menghitung data (seperti completedCount) dan membuat teks rangkuman (completenessMessage).
+
+4.![alt text](image/3.gif) 
+mengganti body statis dari Praktikum 1 dengan ValueListenableBuilder.
+
+Hasilnya, UI sekarang secara otomatis memperbarui dirinya sendiri setiap kali menambah tugas atau mencentang checkbox. Ini terjadi secara efisien karena hanya widget di dalam builder ini yang direbuild, bukan seluruh halaman.
