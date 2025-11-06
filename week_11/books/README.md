@@ -1,16 +1,38 @@
-# books
+# Praktikum 1
 
-A new Flutter project.
+Soal 1
 
-## Getting Started
+```
+import 'dart:async';
 
-This project is a starting point for a Flutter application.
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-A few resources to get you started if this is your first Flutter project:
+void main() {
+  runApp(const MyApp());
+}
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Soultan Mohammad Agnar Bisyarah',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const FuturePage(),
+    );
+  }
+}
+```
+
+Soal 2 
+
+Mencari judul buku favorit:
+<img src="img/soal2_1_1.png" alt="Demo Photo Filter" width="600">
+
+Mencoba akses di browser
+<img src="img/soal2_1_2.png" alt="Demo Photo Filter" width="600">
