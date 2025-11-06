@@ -222,3 +222,28 @@ returnError()
 }).whenComplete(() => print('Complete'));
 ```
 <img src="img/soal8_5.gif" alt="Demo Photo Filter" width="300">
+
+Soal 10
+```dart
+ Future handleError() async {
+    try {
+      await returnError();
+    }
+    catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    }
+    finally {
+      print('Complete');
+    }
+  }
+```
+
+Hasilnya akan muncul tulisan succes dan di terminal akan muncul tulisan complete
+
+Perbedaan nya adalah: 
+
+- returnError() hanya melempar error setelah 2 detik tanpa menanganinya.
+
+- handleError() memanggil returnError() dan menangkap error-nya dengan try–catch, lalu menampilkan pesan error ke UI (setState) dan menjalankan finally setelah selesai.

@@ -59,6 +59,19 @@ class _FuturePageState extends State<FuturePage> {
   await Future.delayed(const Duration(seconds: 2));
   throw Exception('Something terrible happened!');
 }
+  Future handleError() async {
+    try {
+      await returnError();
+    }
+    catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    }
+    finally {
+      print('Complete');
+    }
+  }
 
   Future<http.Response> getData() async {
     const authority = 'www.googleapis.com';
@@ -132,7 +145,7 @@ class _FuturePageState extends State<FuturePage> {
               // }).catchError((e) {
               //   result = 'An error occurred';
               // });
-              returnError()
+              handleError()
               .then((value){
                 setState(() {
                   result = 'Success';
