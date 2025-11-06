@@ -168,7 +168,7 @@ void returnFG() {
     });
   }
 ```
-Soal 4
+Soal 7
 <img src="img/soal7_4.gif" alt="Demo Photo Filter" width="300">
 
 Soal 8
@@ -198,3 +198,27 @@ void returnFG() {
 - Future.wait langsung menjalankan beberapa Future sekaligus dan selesai saat semua Future selesai.
 
 - FutureGroup memberi kontrol manual: bisa menambah Future satu per satu, lalu memanggil close() untuk menandakan tidak ada Future tambahan lagi sebelum menunggu hasilnya.
+
+# Praktikum 5
+
+soal 9
+```dart
+Future returnError() async {
+  await Future.delayed(const Duration(seconds: 2));
+  throw Exception('Something terrible happened!');
+}
+```
+
+```dart
+returnError()
+    .then((value){
+  setState(() {
+    result = 'Success';
+  });
+}).catchError((onError){
+  setState(() {
+    result = onError.toString();
+  });
+}).whenComplete(() => print('Complete'));
+```
+<img src="img/soal8_5.gif" alt="Demo Photo Filter" width="300">

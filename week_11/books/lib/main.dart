@@ -1,4 +1,4 @@
-import 'package:async/async.dart';
+// import 'package:async/async.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -54,6 +54,11 @@ class _FuturePageState extends State<FuturePage> {
       completer.completeError({});
     }
   }
+
+  Future returnError() async {
+  await Future.delayed(const Duration(seconds: 2));
+  throw Exception('Something terrible happened!');
+}
 
   Future<http.Response> getData() async {
     const authority = 'www.googleapis.com';
@@ -119,7 +124,7 @@ class _FuturePageState extends State<FuturePage> {
           const Spacer(),
           ElevatedButton(
             onPressed: () {
-              returnFG();
+              // returnFG();
               // getNumber().then((value) {
               //   setState(() {
               //     result = value.toString();
@@ -127,6 +132,16 @@ class _FuturePageState extends State<FuturePage> {
               // }).catchError((e) {
               //   result = 'An error occurred';
               // });
+              returnError()
+              .then((value){
+                setState(() {
+                  result = 'Success';
+                });
+              }).catchError((onError){
+                setState(() {
+                  result = onError.toString();
+                });
+              }).whenComplete(() => print('Complete'));
             },
             child: const Text('GO!'),
           ),
