@@ -285,3 +285,30 @@ navigator.geolocation.getCurrentPosition()
 Jadi meskipun kamu tidak menjalankan di HP, browser tetap bisa memberikan koordinat perkiraan — makanya kamu tetap dapat nilai latitude & longitude.
 <img src="img/soal12_6_2.gif" alt="Demo Photo Filter" width="300">
 
+# Praktikum 7
+
+Soal 13
+
+FutureBuilder -> UI otomatis berubah sesuai status Future.
+
+setState dengan myPosition -> UI diperbarui manual setelah data diperoleh.
+
+<img src="img/soal13_7.gif" alt="Demo Photo Filter" width="300">
+
+Soal 14
+
+Perbedaan UI hanya terlihat saat error terjadi.
+Tambahan snapshot.hasError membuat aplikasi:
+
+- Lebih informativ,
+
+- Lebih ramah pengguna,
+
+- Dan tidak crash saat data gagal dimuat.
+
+UI nya hanya dapat dilihat ketika mengalami eror
+
+<img src="img/soal14_7.gif" alt="Demo Photo Filter" width="300">
+
+
+
