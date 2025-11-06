@@ -247,3 +247,20 @@ Perbedaan nya adalah:
 - returnError() hanya melempar error setelah 2 detik tanpa menanganinya.
 
 - handleError() memanggil returnError() dan menangkap error-nya dengan try–catch, lalu menampilkan pesan error ke UI (setState) dan menjalankan finally setelah selesai.
+
+# Praktikum 6
+
+Soal 11
+
+```dart
+Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Soultan Mohammad Agnar Bisyarah',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const LocationScreen(),
+    );
+  }
+```
