@@ -339,3 +339,25 @@ Karena:
 - Dengan await dan setState(), halaman pertama bisa menerima hasil pilihan pengguna dan memperbarui tampilannya secara langsung.
 
 <img src="img/soal16_8.gif" alt="Demo Photo Filter" width="300">
+
+# Praktikum 9
+
+Soal 17
+
+Hasil di UI:
+
+- Klik Red → background jadi merah
+
+- Klik Green → background jadi hijau
+
+- Klik Blue → background jadi biru
+
+Karena:
+
+- showDialog() menampilkan dialog sebagai pop-up modal di atas layar utama.
+
+- Saat pengguna memilih warna, dialog ditutup (pop) dan nilai warna dikembalikan ke fungsi pemanggil.
+
+- Fungsi _showColorDialog sudah await dialog itu, jadi setelah ditutup, ia tahu warna apa yang dipilih, lalu memanggil setState() agar UI berubah.
+
+<img src="img/soal17_9.gif" alt="Demo Photo Filter" width="300">
