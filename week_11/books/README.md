@@ -121,4 +121,4 @@ class _FuturePageState extends State<FuturePage> {
 }
 ```
 
-<img src="img/soal3_1_1.png" alt="Demo Photo Filter" width="600">
+<img src="img/soal3_1_1.png" alt="Demo Photo Filter" width="300">
