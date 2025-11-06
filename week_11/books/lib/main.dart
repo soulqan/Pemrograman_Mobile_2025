@@ -32,7 +32,18 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
+  late Completer completer;
 
+  Future getNumber() {
+    completer = Completer<int>();
+    calculate();
+    return completer.future;
+  }
+
+  Future calculate() async {
+    await Future.delayed(const Duration(seconds : 5));
+    completer.complete(42);
+  }
   Future<http.Response> getData() async {
     const authority = 'www.googleapis.com';
     // ID buku 'junbDwAAQBAJ' adalah ID dari jobsheet
@@ -77,26 +88,23 @@ class _FuturePageState extends State<FuturePage> {
         child: Column(children: [
           const Spacer(),
           ElevatedButton(
-            child: Text('GO!'),
             onPressed: () {
-              count();
-              // setState(() {});
-              // getData()
-              //     .then((value) {
-              //   result = value.body.toString().substring(0, 450);
-              //   setState(() {});
-              // })
-              // .catchError((_) {
-              //   result = 'An error occurred';
-              //   setState(() {});
-              // });
+              getNumber().then((value) {
+                setState(() {
+                  result = value.toString();
+                });
+              }).catchError((_) {
+                setState(() {
+                  result = 'An error occurred';
+                });
+              });
             },
+            child: const Text('GO!'),
           ),
           const Spacer(),
           Text(result),
           const Spacer(),
           const CircularProgressIndicator(),
-          const Spacer(),
         ]),
       ),
     );
