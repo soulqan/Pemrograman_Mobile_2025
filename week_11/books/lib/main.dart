@@ -40,10 +40,21 @@ class _FuturePageState extends State<FuturePage> {
     return completer.future;
   }
 
-  Future calculate() async {
-    await Future.delayed(const Duration(seconds : 5));
-    completer.complete(42);
+  // Future calculate() async {
+  //   await Future.delayed(const Duration(seconds : 5));
+  //   completer.complete(42);
+  // }
+  calculate() async {
+    try {
+      await new Future.delayed(const Duration(seconds : 5));
+      completer.complete(42);
+      // throw Exception();
+    }
+    catch (_) {
+      completer.completeError({});
+    }
   }
+
   Future<http.Response> getData() async {
     const authority = 'www.googleapis.com';
     // ID buku 'junbDwAAQBAJ' adalah ID dari jobsheet
@@ -89,14 +100,21 @@ class _FuturePageState extends State<FuturePage> {
           const Spacer(),
           ElevatedButton(
             onPressed: () {
+              // getNumber().then((value) {
+              //   setState(() {
+              //     result = value.toString();
+              //   });
+              // }).catchError((e) {
+              //   setState(() {
+              //     result = 'An error occurred';
+              //   });
+              // });
               getNumber().then((value) {
                 setState(() {
                   result = value.toString();
                 });
-              }).catchError((_) {
-                setState(() {
-                  result = 'An error occurred';
-                });
+              }).catchError((e) {
+                result = 'An error occurred';
               });
             },
             child: const Text('GO!'),

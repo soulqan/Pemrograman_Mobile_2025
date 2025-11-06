@@ -292,10 +292,21 @@ class _FuturePageState extends State<FuturePage> {
     return completer.future;
   }
 
-  Future calculate() async {
-    await Future.delayed(const Duration(seconds : 5));
-    completer.complete(42);
+  // Future calculate() async {
+  //   await Future.delayed(const Duration(seconds : 5));
+  //   completer.complete(42);
+  // }
+  calculate() async {
+    try {
+      await new Future.delayed(const Duration(seconds : 5));
+      completer.complete(42);
+      // throw Exception();
+    }
+    catch (_) {
+      completer.completeError({});
+    }
   }
+
   Future<http.Response> getData() async {
     const authority = 'www.googleapis.com';
     // ID buku 'junbDwAAQBAJ' adalah ID dari jobsheet
@@ -341,14 +352,21 @@ class _FuturePageState extends State<FuturePage> {
           const Spacer(),
           ElevatedButton(
             onPressed: () {
+              // getNumber().then((value) {
+              //   setState(() {
+              //     result = value.toString();
+              //   });
+              // }).catchError((e) {
+              //   setState(() {
+              //     result = 'An error occurred';
+              //   });
+              // });
               getNumber().then((value) {
                 setState(() {
                   result = value.toString();
                 });
-              }).catchError((_) {
-                setState(() {
-                  result = 'An error occurred';
-                });
+              }).catchError((e) {
+                result = 'An error occurred';
               });
             },
             child: const Text('GO!'),
@@ -386,3 +404,20 @@ Kode itu membuat Future manual dengan Completer.
 - calculate() menunggu 5 detik lalu memanggil completer.complete(42) → menandakan Future selesai dan hasilnya 42.
 
 <img src="img/soal5_3.gif" alt="Demo Photo Filter" width="300">
+
+Soal 6
+```
+calculate() async {
+    try {
+      await new Future.delayed(const Duration(seconds : 5));
+      completer.complete(42);
+      // throw Exception();
+    }
+    catch (_) {
+      completer.completeError({});
+    }
+  }
+```
+Perbedaan langkah 2 dengan langkah 5-6 adalah pada penanganan eror nya, pada calculate nomor 2 tidak ada handler untuk eror nya
+
+<img src="img/soal6_3.gif" alt="Demo Photo Filter" width="300">
