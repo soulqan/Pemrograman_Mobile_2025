@@ -264,3 +264,24 @@ Widget build(BuildContext context) {
     );
   }
 ```
+<img src="img/soal12_6_1.jpeg" alt="Demo Photo Filter" width="300">
+
+Soal 12
+
+Ketika menjalankan Flutter di browser, plugin geolocator otomatis:
+
+1. Menggunakan JavaScript API:
+
+navigator.geolocation.getCurrentPosition()
+
+2. API ini meminta lokasi dari browser, yang bisa didapat dari:
+
+- IP address (perkiraan lokasi)
+
+- Wi-Fi network
+
+- atau sensor GPS (jika perangkat mendukung, misal laptop dengan chip GPS)
+
+Jadi meskipun kamu tidak menjalankan di HP, browser tetap bisa memberikan koordinat perkiraan — makanya kamu tetap dapat nilai latitude & longitude.
+<img src="img/soal12_6_2.gif" alt="Demo Photo Filter" width="300">
+
