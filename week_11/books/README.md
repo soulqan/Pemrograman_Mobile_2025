@@ -310,5 +310,32 @@ UI nya hanya dapat dilihat ketika mengalami eror
 
 <img src="img/soal14_7.gif" alt="Demo Photo Filter" width="300">
 
+# Praktikum 8
 
+Soal 15
 
+```dart
+appBar: AppBar(
+        title: const Text('Navigation First Screen Soultan'),
+      ),
+```
+
+Soal 16
+
+Hasilnya di UI:
+
+- Klik tombol Red → background layar pertama jadi merah.
+
+- Klik tombol Green → background jadi hijau.
+
+- Klik tombol Blue → background jadi biru.
+
+Karena:
+
+- Navigator.push() membuka halaman baru dan menunggu hasil dari halaman itu (asynchronous).
+
+- Navigator.pop(context, value) menutup halaman dan mengirimkan data kembali ke halaman sebelumnya.
+
+- Dengan await dan setState(), halaman pertama bisa menerima hasil pilihan pengguna dan memperbarui tampilannya secara langsung.
+
+<img src="img/soal16_8.gif" alt="Demo Photo Filter" width="300">
