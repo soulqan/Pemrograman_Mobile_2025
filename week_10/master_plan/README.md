@@ -44,7 +44,7 @@ Panah ke Bawah (Build/Listen): View (Widgets/Layar) "mendengarkan" data dari Mod
 
 Panah ke Atas (onPressed/Update): Aksi pengguna (onPressed) di View memanggil fungsi yang memperbarui (mengubah) data di dalam Model (ValueNotifier).
 
-3. ![alt text](image/3.gif) 
+3. ![alt text](image/4.gif) 
 Hasilnya adalah sebuah aplikasi multi-screen (2 layar) yang state-nya terkelola secara terpusat.
 
 Layar 1 (PlanCreatorScreen): Berfungsi sebagai "halaman utama" tempat untuk membuat rencana baru dan melihat daftar semua rencana yang ada.
