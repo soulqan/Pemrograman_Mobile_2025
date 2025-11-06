@@ -122,3 +122,17 @@ class _FuturePageState extends State<FuturePage> {
 ```
 
 <img src="img/soal3_1_1.png" alt="Demo Photo Filter" width="300">
+
+
+Soal 4
+
+Tujuan dari fungsi return...Async adalah untuk mensimulasikan tiga pekerjaan terpisah yang masing-masing membutuhkan waktu 3 detik.
+
+Tujuan dari fungsi count() adalah untuk menunjukkan bagaimana await memaksa pekerjaan-pekerjaan tersebut berjalan secara berurutan (sekuensial):
+- Tunggu 3 detik untuk returnOneAsync().
+- Lalu, tunggu 3 detik lagi untuk returnTwoAsync().
+- Lalu, tunggu 3 detik lagi untuk returnThreeAsync().
+
+<img src="img/soal4_2.gif" alt="Demo Photo Filter" width="300">
+
+Hasilnya, fungsi count() membutuhkan total 9 detik untuk selesai, lalu menampilkan hasil penjumlahannya ("6") di layar.
