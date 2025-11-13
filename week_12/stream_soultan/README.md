@@ -56,4 +56,11 @@ Stream<Color> getColorStream() async* {
 Kode tersebut membuat sebuah Stream yang mengeluarkan satu warna dari list colors setiap 1 detik secara berurutan dan berulang tanpa henti.
 
 Soal 4
+
 <img src="img/soal4.gif" alt="Demo Photo Filter" width="300">
+
+Soal 5
+
+.listen(): Yaitu "berlangganan" ke Stream. Fungsi nya yaitu akan segera berlanjut dan selesai, tetapi callback (onData) akan dipanggil di background setiap kali ada data baru.
+
+await for : Yaitu "menunggu" Stream. Fungsi nya yaitu akan berhenti (pause) di baris tersebut dan menunggu setiap event data satu per satu. Fungsi tidak akan berlanjut sampai Stream-nya selesai.
