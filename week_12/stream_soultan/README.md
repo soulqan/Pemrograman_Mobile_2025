@@ -54,3 +54,6 @@ Stream<Color> getColorStream() async* {
   }
 ```
 Kode tersebut membuat sebuah Stream yang mengeluarkan satu warna dari list colors setiap 1 detik secara berurutan dan berulang tanpa henti.
+
+Soal 4
+<img src="img/soal4.gif" alt="Demo Photo Filter" width="300">
