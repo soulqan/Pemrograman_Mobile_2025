@@ -64,3 +64,16 @@ Soal 5
 .listen(): Yaitu "berlangganan" ke Stream. Fungsi nya yaitu akan segera berlanjut dan selesai, tetapi callback (onData) akan dipanggil di background setiap kali ada data baru.
 
 await for : Yaitu "menunggu" Stream. Fungsi nya yaitu akan berhenti (pause) di baris tersebut dan menunggu setiap event data satu per satu. Fungsi tidak akan berlanjut sampai Stream-nya selesai.
+
+Soal 6
+
+kode 8
+
+Menginisialisasi stream angka (NumberStream) → mendengarkan aliran datanya → memperbarui variabel lastNumber dan UI setiap kali ada angka baru.
+
+kode 10
+
+Fungsi addRandomNumber() menghasilkan angka acak (0–9) lalu mengirimnya ke stream agar bisa diproses atau ditampilkan oleh komponen lain (misalnya UI Flutter).
+
+
+<img src="img/soal6.gif" alt="Demo Photo Filter" width="300">
