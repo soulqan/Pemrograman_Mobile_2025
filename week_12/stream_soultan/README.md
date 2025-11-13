@@ -6,9 +6,9 @@ Soal 1
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Stream Soultan',
+      title: 'Stream Soultan', //Stream nama
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        primarySwatch: Colors.lightBlue, // warna kesukaan
       ),
       home: const StreamHomePage(),
     );
