@@ -36,3 +36,21 @@ class ColorStream {
 ];
 }
 ```
+
+Soal 3
+1. yield* digunakan untuk meneruskan/mengeluarkan seluruh event (data) dari satu Stream ke Stream lainnya.
+
+yield* Stream.periodic(...) mengambil semua data yang dihasilkan Stream.periodic dan menjadikannya output dari getColorStream().
+
+2. Apa maksud isi perintah kode tersebut?
+
+```dart
+Stream<Color> getColorStream() async* {
+    yield* Stream.periodic(
+      const Duration(seconds: 1), (int t) {
+        int index = t % colors.length;
+        return colors[index];
+    });
+  }
+```
+Kode tersebut membuat sebuah Stream yang mengeluarkan satu warna dari list colors setiap 1 detik secara berurutan dan berulang tanpa henti.
