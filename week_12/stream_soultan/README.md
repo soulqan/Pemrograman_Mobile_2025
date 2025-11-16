@@ -77,3 +77,14 @@ Fungsi addRandomNumber() menghasilkan angka acak (0–9) lalu mengirimnya ke str
 
 
 <img src="img/soal6.gif" alt="Demo Photo Filter" width="300">
+
+
+Soal 7
+
+Tujuan utamanya adalah untuk mendemonstrasikan cara kerja penanganan error (error handling) pada sebuah Stream.
+
+- Memicu Error (Kode 13): Tombol ElevatedButton sengaja diatur untuk memicu sebuah error (dengan memanggil addError()) alih-alih mengirim angka.
+
+- Mengirim Error (Kode 15): Fungsi addError() memasukkan sebuah event error (string 'error') ke dalam "pipa" Stream menggunakan controller.sink.addError().
+
+- Menangkap Error (Kode 14): Listener (stream.listen) yang ada di initState telah disiapkan dengan callback .onError. Callback ini akan menangkap error tersebut dan menjalankan setState untuk mengubah nilai lastNumber menjadi -1 sebagai tanda bahwa terjadi error.

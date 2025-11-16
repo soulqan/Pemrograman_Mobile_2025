@@ -9,6 +9,9 @@ class NumberStream {
   close(){
     controller.close();
   }
+//   addError() {
+//   controller.sink.addError('error');
+// }
 }
 
 class ColorStream {
@@ -32,4 +35,6 @@ class ColorStream {
         return colors[index];
     });
   }
+
+  
 }
