@@ -104,3 +104,17 @@ Tujuan utamanya adalah untuk memodifikasi data Stream, sebelum data itu sampai k
 - Kode 3: Menerapkan (transform) aturan tersebut ke stream.
 
 <img src="img/soal8.gif" alt="Demo Photo Filter" width="300">
+
+# Praktikum 4
+
+Soal 9
+
+Tujuan utamanya adalah untuk mengelola siklus hidup Stream (lifecycle) dengan benar di dalam widget agar tidak terjadi error atau kebocoran memori (memory leak).
+
+- Langkah 2 (initState): Memulai langganan (listen) saat widget dibuat dan menyimpan referensinya (subscription).
+
+- Langkah 6 (addRandomNumber): Mencegah error dengan memeriksa (!isClosed) apakah Stream masih terbuka sebelum menambahkan data baru.
+
+- Langkah 8 (cancel): Menghentikan langganan (biasanya di dispose()) saat widget dihancurkan untuk mencegah memory leak.
+
+<img src="img/soal9.gif" alt="Demo Photo Filter" width="300">
