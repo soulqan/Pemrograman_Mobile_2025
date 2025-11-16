@@ -118,3 +118,20 @@ Tujuan utamanya adalah untuk mengelola siklus hidup Stream (lifecycle) dengan be
 - Langkah 8 (cancel): Menghentikan langganan (biasanya di dispose()) saat widget dihancurkan untuk mencegah memory leak.
 
 <img src="img/soal9.gif" alt="Demo Photo Filter" width="300">
+
+# Praktikum 5
+
+Soal 10
+
+Error itu terjadi karena stream tersebut adalah Stream "langganan tunggal" (single-subscription), yang artinya hanya boleh punya satu pendengar (listener) saja.
+Pada kode mencoba memanggil stream listener 2 kali
+
+Soal 11
+
+kode memanggil stream.listen() dua kali (subscription dan subscription2).
+
+Karena kode menggunakan .asBroadcastStream(), Stream itu sekarang mengirim setiap angka ke semua pendengarnya.
+
+Jadi, saat mengirim satu angka (misal 9), subscription pertama menambah "9 - " dan subscription kedua juga menambah "9 - ". Hasilnya, teks Anda bertambah 9 - 9 -.
+
+<img src="img/soal11.gif" alt="Demo Photo Filter" width="300">
