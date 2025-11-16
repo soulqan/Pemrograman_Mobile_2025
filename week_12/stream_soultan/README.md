@@ -90,3 +90,17 @@ Tujuan utamanya adalah untuk mendemonstrasikan cara kerja penanganan error (erro
 - Mengirim Error (Kode 15): Fungsi addError() memasukkan sebuah event error (string 'error') ke dalam "pipa" Stream menggunakan controller.sink.addError().
 
 - Menangkap Error (Kode 14): Listener (stream.listen) yang ada di initState telah disiapkan dengan callback .onError. Callback ini akan menangkap error tersebut dan menjalankan setState untuk mengubah nilai lastNumber menjadi -1 sebagai tanda bahwa terjadi error.
+
+# Praktikum 3
+
+Soal 8
+
+Tujuan utamanya adalah untuk memodifikasi data Stream, sebelum data itu sampai ke listener (kode listen).
+
+- Kode 1: Mendeklarasikan variabel transformer.
+
+- Kode 2: Menentukan aturannya Data (value) dikalikan 10.
+
+- Kode 3: Menerapkan (transform) aturan tersebut ke stream.
+
+<img src="img/soal8.gif" alt="Demo Photo Filter" width="300">
