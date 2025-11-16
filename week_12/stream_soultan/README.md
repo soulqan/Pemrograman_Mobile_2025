@@ -65,6 +65,8 @@ Soal 5
 
 await for : Yaitu "menunggu" Stream. Fungsi nya yaitu akan berhenti (pause) di baris tersebut dan menunggu setiap event data satu per satu. Fungsi tidak akan berlanjut sampai Stream-nya selesai.
 
+# Praktikum 2
+
 Soal 6
 
 kode 8
