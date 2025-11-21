@@ -19,3 +19,6 @@ Soal 2
 
 Soal 3
 <img src="img/soal3.jpeg" alt="Demo Photo Filter" width="300">
+
+<img src="img/soal3-1.jpeg" alt="Demo Photo Filter" width="300">
+

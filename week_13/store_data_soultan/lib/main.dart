@@ -33,6 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
   String pizzaString = '';
   List<Pizza> myPizzas = [];
 
+  String convertToJSON(List<Pizza> pizzas) {
+  return jsonEncode(pizzas.map((pizza) => jsonEncode(pizza)).toList());
+}
+
   Future <List<Pizza>> readJsonFile() async {
     String myString = await DefaultAssetBundle.of(context)
         .loadString('assets/pizzalist.json');
@@ -42,7 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
           Pizza myPizza = Pizza.fromJson(pizza);
           myPizzas.add(myPizza);
         }
+        String json = convertToJSON(myPizzas);
+        print(json);
         return myPizzas;
+
     // setState(() {
     //   pizzaString = myString;
     // });
