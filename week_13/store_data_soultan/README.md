@@ -13,3 +13,6 @@ Soal 1
     );
   }
 ```
+
+Soal 2
+<img src="img/soal2.jpeg" alt="Demo Photo Filter" width="300">
