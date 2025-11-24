@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import './model/pizza.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -40,6 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   late File myFile;
   String fileText = '';
+
+  final storage = FlutterSecureStorage();
+  final pwdController = TextEditingController();
+  String myPass = '';
+  String myKey = 'myPasswordKey';
 
   Future<List<Pizza>> readJsonFile() async {
     String myString = await DefaultAssetBundle.of(
@@ -114,6 +120,16 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  Future<void> writeToSecureStorage() async {
+    await storage.write(key: myKey, value: pwdController.text);
+    debugPrint("Saved successfully");
+  }
+
+  Future<String> readFromSecureStorage() async {
+    String secret = await storage.read(key: myKey) ?? '';
+    return secret;
+  }
+
   @override
   void initState() {
     getPaths().then((_) {
@@ -130,14 +146,25 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('Doc path: ' + documentsPath),
-          Text('Temp path: ' + tempPath),
+          TextField(controller: pwdController),
 
           ElevatedButton(
-            child: const Text('Read File'),
-            onPressed: () => readFile(),
+            child: const Text('Save Value'),
+            onPressed: () {
+              writeToSecureStorage();
+            },
           ),
-          Text(fileText),
+
+          ElevatedButton(
+            child: const Text('Read Value'),
+            onPressed: () async {
+              String value = await readFromSecureStorage();
+              debugPrint("Value read: $value");
+              setState(() => myPass = value);
+            },
+          ),
+
+          Text('$myPass'),
         ],
       ),
     );
