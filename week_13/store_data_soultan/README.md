@@ -79,4 +79,11 @@ Jelaskan maksud kode lebih safe dan maintainable!
 
 <img src="img/soal5.jpeg" alt="Demo Photo Filter" width="300">
 
+# Praktikum 4
 
+
+Soal 6
+
+<img src="img/soal6.jpeg" alt="Demo Photo Filter" width="300">
+
+<img src="img/soal6.gif" alt="Demo Photo Filter" width="300">
