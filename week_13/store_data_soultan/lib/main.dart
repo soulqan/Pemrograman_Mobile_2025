@@ -1,6 +1,7 @@
 import 'dart:convert';
 import './model/pizza.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter JSON Demo Soultan',
-      theme: ThemeData(primarySwatch: Colors.lightBlue),
+      theme: ThemeData(primarySwatch: Colors.red),
       home: const MyHomePage(),
     );
   }
@@ -32,6 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
   String pizzaString = '';
   List<Pizza> myPizzas = [];
   int appCounter = 0;
+
+  String documentsPath = '';
+  String tempPath = '';
 
   Future<List<Pizza>> readJsonFile() async {
     String myString = await DefaultAssetBundle.of(
@@ -67,39 +71,39 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future deletePreference() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  await prefs.clear();
-  setState(() {
-    appCounter = 0;
-  });
-}
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    setState(() {
+      appCounter = 0;
+    });
+  }
+
+  Future getPaths() async {
+    final docDir = await getApplicationDocumentsDirectory();
+    final tempDir = await getTemporaryDirectory();
+    setState(() {
+      documentsPath = docDir.path;
+      tempPath = tempDir.path;
+    });
+  }
 
   @override
   void initState() {
     super.initState();
-    readAndWritePreference();
+    getPaths();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('JSON')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              'You have opened this app $appCounter times',
-            ),
-            ElevatedButton(
-              onPressed: () {
-                deletePreference();
-              },
-              child: const Text('Reset counter'),
-            )
-          ],
-        ),
-      )
+      appBar: AppBar(title: const Text('Path Provider')),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text('Doc path: $documentsPath'),
+          Text('Temp path: $tempPath'),
+        ],
+      ),
     );
   }
 }

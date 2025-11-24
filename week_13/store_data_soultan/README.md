@@ -87,3 +87,9 @@ Soal 6
 <img src="img/soal6.jpeg" alt="Demo Photo Filter" width="300">
 
 <img src="img/soal6.gif" alt="Demo Photo Filter" width="300">
+
+# Praktikum 5
+
+Soal 7
+
+<img src="img/soal7.jpeg" alt="Demo Photo Filter" width="300">
