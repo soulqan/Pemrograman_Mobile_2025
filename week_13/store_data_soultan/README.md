@@ -93,3 +93,9 @@ Soal 6
 Soal 7 
 
 <img src="img/soal7.jpeg" alt="Demo Photo Filter" width="300">
+
+Soal 8
+
+Fungsi tersebut berfungsi menulis string ('Margherita, Capricciosa, Napoli') ke dalam objek myFile dan mengembalikan true jika proses berhasil. Jika terjadi kesalahan saat penulisan, fungsi akan mengembalikan false.
+
+<img src="img/soal8.gif" alt="Demo Photo Filter" width="300">
