@@ -66,3 +66,17 @@ Soal 4
 ]
 ```
 <img src="img/soal4.jpeg" alt="Demo Photo Filter" width="300">
+
+# Praktikum 3
+
+Soal 5
+
+Jelaskan maksud kode lebih safe dan maintainable!
+
+- Safe: Dengan error handling, program tidak langsung crash saat terjadi kondisi tidak terduga, sehingga lebih aman dan stabil.
+
+- Maintainable: Dengan menyimpan field key sebagai konstanta, perubahan nama field API hanya perlu dilakukan di satu tempat, membuat kode lebih mudah dirawat.
+
+<img src="img/soal5.jpeg" alt="Demo Photo Filter" width="300">
+
+
