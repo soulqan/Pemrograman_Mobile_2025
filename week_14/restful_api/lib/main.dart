@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pizza_detail.dart';
+import 'package:restful_api/pizza_detail.dart';
 import 'httphelper.dart';
 import 'pizza.dart';
 
@@ -10,7 +10,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,21 +66,33 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (BuildContext context, int position) {
               final pizza = pizzas[position];
               return ListTile(
-                title: Text(pizza.pizzaName ?? 'No name'),
+                title: Text(pizza.pizzaName ?? 'No Name'),
                 subtitle: Text(
-                  '${pizza.description} - € ${pizza.price}\nCategory: ${pizza.category ?? 'Unknown'}',
+                  '${pizza.description ?? 'No Description'} - € ${pizza.price ?? 0.0}\nCategory: ${pizza.category ?? 'No Category'}',
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          PizzaDetailScreen(pizza: pizza, isNew: false),
+                    ),
+                  );
+                },
               );
             },
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const PizzaDetailScreen()),
+            MaterialPageRoute(
+              builder: (context) =>
+                  PizzaDetailScreen(pizza: Pizza(), isNew: true),
+            ),
           );
         },
       ),

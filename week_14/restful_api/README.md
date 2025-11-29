@@ -25,9 +25,15 @@ Menambahkan field baru yaitu category
       "pizzaName": "Carciofi", 
       "description": "Pizza with tomato, fresh mozzarella and artichokes",
       "price": 8.80, 
-      "imageUrl": "images/marinara.png"
+      "imageUrl": "images/marinara.png",
       "category": "Vegetarian"
     }, 
 ```
 <img src="img/prak2_1.png" alt="Demo Photo Filter" width="600">
 <img src="img/soal2.gif" alt="Demo Photo Filter" width="300">
+
+# Praktikum 3
+
+Soal 3
+
+<img src="img/soal3.gif" alt="Demo Photo Filter" width="300">
