@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('JSON - Soultan'),
+       title: const Text('JSON - Soultan'),
         backgroundColor: const Color.fromARGB(255, 17, 125, 179),
       ),
       body: FutureBuilder<List<Pizza>>(
@@ -65,20 +65,30 @@ class _MyHomePageState extends State<MyHomePage> {
             itemCount: pizzas.length,
             itemBuilder: (BuildContext context, int position) {
               final pizza = pizzas[position];
-              return ListTile(
-                title: Text(pizza.pizzaName ?? 'No Name'),
-                subtitle: Text(
-                  '${pizza.description ?? 'No Description'} - € ${pizza.price ?? 0.0}\nCategory: ${pizza.category ?? 'No Category'}',
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          PizzaDetailScreen(pizza: pizza, isNew: false),
-                    ),
-                  );
+              return Dismissible(
+                key: Key(position.toString()),
+                onDismissed: (item) {
+                  HttpHelper helper = HttpHelper();
+                  setState(() {
+                    pizzas.removeAt(position);
+                  });
+                  helper.deletePizza(pizza.id!);
                 },
+                child: ListTile(
+                  title: Text(pizza.pizzaName ?? 'No Name'),
+                  subtitle: Text(
+                    '${pizza.description ?? 'No Description'} - € ${pizza.price ?? 0.0}\nCategory: ${pizza.category ?? 'No Category'}',
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            PizzaDetailScreen(pizza: pizza, isNew: false),
+                      ),
+                    );
+                  },
+                ),
               );
             },
           );
